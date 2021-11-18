@@ -1,0 +1,57 @@
+@use "mixin" as mixin;
+
+@font-face {
+    font-family: 'NotoSansJP';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./../font/NotoSansJP-Regular.woff') format('woff'),
+        url('./../font/NotoSansJP-Regular.eot')  format('eot');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NotoSansJP';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./../font/NotoSansJP-Bold.woff') format('woff'),
+        url('./../font/NotoSansJP-Bold.eot')  format('eot');
+    font-display: swap;
+
+}
+@font-face {
+    font-family: 'NotoSansJP';
+    font-style: normal;
+    font-weight: 900;
+    src: url('./../font/NotoSansJP-Black.woff') format('woff'),
+        url('./../font/NotoSansJP-Black.eot')  format('eot');
+    font-display: swap;
+}
+
+.siteName__wrap {
+    padding-left: 56px;
+    @include mixin.tab {
+        padding-left: 20px;
+    }
+}
+
+.siteName {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 47px;
+    padding-top: 12px;
+    padding-bottom: 16px;
+    &::before{
+        position: absolute;
+        display: block;
+        top: 0;
+        left: -57px;
+        content: "";
+        background: url(../img/logo.png) no-repeat center;
+        background-size: contain;
+        height: 47px;
+        width: 47px;
+    }
+    @include mixin.tab {
+        transform: scale(.8);
+    }
+}

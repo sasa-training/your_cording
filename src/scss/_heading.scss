@@ -1,0 +1,68 @@
+@use "mixin" as mixin;
+@use "config/variables" as variables;
+
+.heading02 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 56px;
+    @include mixin.tab {
+        font-size: 1.5rem;
+    }
+    &__sub {
+        font-weight: bold;
+        color: variables.$fontColorSub;
+        margin-top: 13px;
+        display: inline-block;
+    }
+    &__wrap {
+        text-align: center;
+    }
+}
+
+.heading03 {
+    margin-top: 60px;
+    font-size: 1.75rem;
+    font-weight: bold;
+    @include mixin.tab {
+        font-size: 1.4rem;
+    }
+    &__wrap {
+        text-align: center;
+    }
+}
+
+.heading_white {
+    font-size: 2rem;
+    font-weight: bold;
+    color: variables.$baseColor1;
+    @include mixin.tab {
+        font-size: 1.5rem;
+    }
+    &__sub {
+        font-weight: bold;
+        color: variables.$baseColor1;
+        margin-top: 13px;
+        display: inline-block;
+    }
+    &__wrap {
+        text-align: center;
+    }
+}
+
+.feature01 {
+    margin-top: 100px;
+}
+
+.feature02 {
+    margin-top: 88px;
+}
+
+.feature03 {
+    margin-top: 138px;
+}
+
+.adjustment__pdtHeading {
+    padding-top: 56px;
+
+}
+

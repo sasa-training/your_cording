@@ -1,0 +1,38 @@
+@use "mixin" as mixin;
+@use "config/variables" as variables;
+
+footer {
+    background: variables.$subColor2;
+}
+
+.footer {
+    &__inner {
+        @include mixin.common__inner(32px,48px);
+        height: auto;
+        text-align: center;
+        span {
+            font-size: 1.5rem;
+            line-height: 1.16;
+            font-weight: bold;
+        }
+        ul {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            @include mixin.sp {
+                flex-direction: column;
+            }
+            li {
+                padding: 0 33px;
+                line-height: 1.75;
+                font-weight: bold;
+            }
+        }
+        small {
+            font-size: .875rem;
+            line-height: 1.357;
+            margin-top: 56px;
+            display: inline-block;
+        }
+    }
+}

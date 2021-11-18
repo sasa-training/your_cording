@@ -1,0 +1,107 @@
+@use "mixin" as mixin;
+@use "config/variables" as variables;
+
+.header {
+    &__inner {
+        @include mixin.common__inner(0,0);
+        @include mixin.flex__rayout(row,space-between);
+        height: auto;
+    }
+}
+
+
+.gNavi {
+    &__inner {
+        @include mixin.flex__rayout(row,space-between);
+    }
+    li{
+        padding: 0 23px;
+        font-weight: bold;
+    }
+    @include mixin.tab {
+        display: none;
+    }
+    &.open_toggle {
+        display: initial;
+        position: fixed;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        ul {
+            display: block;
+            z-index: 10;
+            background: #FFF;
+            li {
+                padding: 0;
+                a {
+                    padding: 23px;
+                    display: block;
+                    transition: all .3s 0s ease;
+                    &:hover {
+                        background: variables.$fontColorSub;
+                        color: variables.$baseColor1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.toggle-btn {
+    display: none;
+    @include mixin.tab {
+        position: fixed;
+        top: 36px;
+        right: 20px;
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+    span {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        height: 3px;
+        width: 30px;
+        background: variables.$fontColorSub;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            right: 0px;
+            height: 3px;
+            width: 30px;
+            background: variables.$fontColorSub;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            right: 0px;
+            height: 3px;
+            width: 30px;
+            background: variables.$fontColorSub;
+        }
+    }
+    &.open_toggle {
+        span {
+            background: rgba($color: #000000, $alpha: 0);
+            &::before {
+                transform: rotate(-45deg);
+                top: 0px;
+                right: 0px;
+            }
+            &::after {
+                transform: rotate(-135deg);
+                top: 0px;
+                right: 0px;
+            }
+        }
+    }
+}
+
+.contact__box__sp {
+    @include mixin.tab {
+    display: none;
+    }
+}

@@ -1,0 +1,37 @@
+@use "mixin" as mixin;
+@use "config/variables" as variables;
+
+
+.faq {
+    margin-top: 56px;
+    height: auto;
+    &__inner {
+        margin-top: 56px;
+        @include mixin.common__inner(0,0);
+        width: 85%;
+        max-width: calc(1088px - 52px);
+    }
+    dl {
+        font-size: 0.875rem;
+        font-weight: bold;
+        border: 1px solid variables.$borderColor;
+        border-top: none;
+        line-height: 1.85;
+        dt {
+            background: variables.$baseColor1;
+            padding: 20px 35px;
+            text-align: center;
+            border-top: 1px solid variables.$borderColor;
+            border-bottom: 1px solid variables.$borderColor;
+            cursor: pointer;
+        }
+        dd {
+            background: variables.$qa_bg;
+            padding: 20px 35px;
+            display: none;
+            &.open {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@use "config/variables" as v;
+/*---------------------------------------------------------
+BrakePoint
+----------------------------------------------------------*/
+@mixin pc {
+    @media (max-width: (v.$pc)) {
+      @content;
+    }
+}
+@mixin tab {
+@media (max-width: (v.$tab)) {
+    @content;
+}
+}
+
+@mixin sp {
+@media (max-width: (v.$sp)) {
+    @content;
+    }
+} 
+
+@mixin flex__rayout($direction,$contetnt){
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $contetnt;
+}
+
+
+@mixin common__inner($pd_top,$pd_bottom) {
+    width: 1088px;
+    padding-top: $pd_top;
+    padding-bottom: $pd_bottom;
+    padding-left: 54px;
+    padding-right: 54px;
+    margin-left: auto;
+    margin-right: auto;
+    @include pc {
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

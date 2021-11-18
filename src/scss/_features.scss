@@ -1,0 +1,137 @@
+@use "mixin" as mixin;
+@use "config/variables" as variables;
+
+.features {
+    &__inner {
+        @include mixin.common__inner(0,0);
+    }
+    .speedCording {
+        @include mixin.flex__rayout(row,space-between);
+        align-items: stretch;
+        margin-top: 50px;
+        @include mixin.tab {
+            flex-direction: column;
+            align-items: center;
+        }
+        div {
+            &:first-child {
+                width:35%;
+                padding-right: 24px;
+                display: flex;
+                align-items: center;
+                @include mixin.tab {
+                    width:80%;
+                    text-align: center;
+                }
+            }
+            &:nth-child(2) {
+                width:auto;
+                margin-top: 50px;
+                @include mixin.tab {
+                    width:100%;
+                    text-align: center;
+                }
+            }
+        }
+        em {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 2;
+            font-style: initial;
+            @include mixin.tab {
+                font-size: 1.15rem;
+            }
+            + p {
+                margin-top: 48px;
+                font-weight: bold;
+                line-height: 1.6;
+            }
+        }
+    }
+    .highQuality {
+        @include mixin.flex__rayout(row,space-between);
+        align-items: stretch;
+        margin-top: 50px;
+        @include mixin.tab {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        div {
+            &:first-child {
+                width:auto;
+                @include mixin.tab {
+                    width:100%;
+                    text-align: center;
+                    margin-top: 50px;
+                }
+            }
+            &:nth-child(2) {
+                width:44%;
+                @include mixin.tab {
+                    margin-top: 50px;
+                    width:80%;
+                    text-align: center;
+                }
+            }
+        }
+        em {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 2;
+            font-style: initial;
+            @include mixin.tab {
+                font-size: 1.25rem;
+            }
+            + p {
+                margin-top: 48px;
+                font-weight: bold;
+                line-height: 1.6;
+            }
+        }
+    }
+    .responseSpeed {
+        @include mixin.flex__rayout(row,space-between);
+        align-items: stretch;
+        margin-top: 50px;
+        @include mixin.tab {
+            flex-direction: column;
+            align-items: center;
+        }
+        div {
+            &:first-child {
+                width:36.7%;
+                margin-left: 23px;
+                @include mixin.tab {
+                    margin-left: 0;
+                    width:80%;
+                    text-align: center;
+                }
+            }
+            &:nth-child(2) {
+                width:auto;
+                margin-top: 30px;
+                margin-right: 60px;
+                @include mixin.tab {
+                    margin-top: 50px;
+                    margin-right: 0;
+                    width:100%;
+                    text-align: center;
+                }
+            }
+        }
+        em {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 2;
+            font-style: initial;
+            @include mixin.tab {
+                font-size: 1.25rem;
+            }
+            + p {
+                margin-top: 48px;
+                font-weight: bold;
+                line-height: 1.6;
+            }
+        }
+    }
+}

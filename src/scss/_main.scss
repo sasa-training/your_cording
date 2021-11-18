@@ -1,0 +1,124 @@
+@use "mixin" as mixin;
+@use "config/variables" as variables;
+
+html { scroll-behavior: smooth;}
+
+body {
+    font-family: 'NotoSansJP', "Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    color: variables.$fontColorMain;
+    z-index: 10;
+    transition: 2s;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    padding:23px 0;
+    box-shadow: (0 3px 6px rgba(0,0,0,.16));
+    position: fixed;
+    z-index: 100;
+    background: #FFF;
+    @include mixin.tab {
+        padding:15px 0;
+    }
+}
+
+a.anchor{
+    display: block;
+    padding-top: 70px;
+    margin-top: -70px;
+}
+
+
+.box__contact {
+    width: 155px;
+    height: 37px;
+    padding: 9px 35px;
+    background: linear-gradient(45deg,#FA41CC, #6020B0);
+    color: #FFF;
+    font-size: .875rem;
+    font-weight: bold;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.firstVisual {
+    padding-top: 93px;
+    height: 768px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    &__inner {
+        @include mixin.common__inner(160px,0);
+        height: 100%;
+        position: relative;
+        @include mixin.tab {
+            text-align: center;
+        }
+        @include mixin.tab {
+            padding-top: 0px;
+        }
+        .firstVisual__img01 {
+            position: absolute;
+            right: -224px;
+            top: -125px;
+            background: url("../img/circle.png") no-repeat top right;
+            width: 708px;
+            height: 711px;
+            z-index: -1;
+            @include mixin.tab {
+                background-position: top center;
+            }
+        }
+        .firstVisual__img02 {
+            position: absolute;
+            right: 33px;
+            top: 130px;
+            background: url("../img/main.png") no-repeat top right;
+            width: 708px;
+            height: 711px;
+            z-index: -1;
+            @include mixin.tab {
+                position: absolute;
+                right: 0;
+                top: 0px;
+                width: 100%;
+            }
+            @include mixin.sp {
+                position: absolute;
+                left: 0px;
+                top: 40px;
+                width: 100%;
+                height: 355px;
+                background-size: contain;
+            }
+        }
+        strong {
+            display: block;
+            font-size: 2rem;
+            line-height: 1.4;
+            @include mixin.tab {
+                margin-top: 60px;
+                font-size: 1.5rem;
+            }
+            + p {
+                margin-top: 55px;
+                @include mixin.tab {
+                    margin-top: 260px;
+                }
+                + div {
+                    margin-top: 55px;
+                    @include mixin.tab {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@use "mixin" as mixin;
+
+.br__sp {
+    display: none;
+    @include mixin.sp {
+        display: block;
+    }
+}
